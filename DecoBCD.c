@@ -2,7 +2,8 @@
 #include "DECOBCD.h"
 #include "ctype.h"
 
-int Display [7][14] = {0, 0, 0, 0, 0, 0, 1}, //0
+int Display [14][7] = {
+                      {0, 0, 0, 0, 0, 0, 1}, //0
                       {1, 0, 0, 1, 1, 1, 1}, //1
                       {0, 0, 1, 0, 0, 1, 0}, //2
                       {0, 0, 0, 0, 1, 1, 0}, //3
@@ -15,7 +16,8 @@ int Display [7][14] = {0, 0, 0, 0, 0, 0, 1}, //0
                       {0, 0, 0, 0, 0, 1, 0}, //a
                       {1, 1, 0, 0, 0, 0, 0}, //b
                       {0, 1, 1, 0, 0, 0, 1}, //c
-                      {1, 0, 0, 0, 0, 1, 0}; //d
+                      {1, 0, 0, 0, 0, 1, 0}  //d
+                      };
 
 int Segmento [7] = {0, 1, 2, 3, 4, 5, 6, 7};
 int Decodificador(char Letra) {
@@ -23,59 +25,59 @@ int Decodificador(char Letra) {
     switch (Tecla) {
         case '0':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][0] << Segmento[i]);
+                PTB -> PSOR (Display[0][i] << Segmento[i]);
             } break;
         case '1':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][1] << Segmento[i]);
+                PTB -> PSOR (Display[1][i] << Segmento[i]);
             } break;
         case '2':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][2] << Segmento[i]);
+                PTB -> PSOR (Display[2][i] << Segmento[i]);
             } break;
         case '3':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][3] << Segmento[i]);
+                PTB -> PSOR (Display[3][i] << Segmento[i]);
             } break;
         case '4':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][4] << Segmento[i]);
+                PTB -> PSOR (Display[4][i] << Segmento[i]);
             } break;
         case '5':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][5] << Segmento[i]);
+                PTB -> PSOR (Display[5][i] << Segmento[i]);
             } break;
         case '6':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][6] << Segmento[i]);
+                PTB -> PSOR (Display[6][i] << Segmento[i]);
             } break;
         case '7':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][7] << Segmento[i]);
+                PTB -> PSOR (Display[7][i] << Segmento[i]);
             } break;
         case '8':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][8] << Segmento[i]);
+                PTB -> PSOR (Display[8][i] << Segmento[i]);
             } break;
         case '9':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][9] << Segmento[i]);
+                PTB -> PSOR (Display[9][i] << Segmento[i]);
             } break;
         case 'A':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][10] << Segmento[i]);
+                PTB -> PSOR (Display[10][i] << Segmento[i]);
             } break;
         case 'B':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][11] << Segmento[i]);
+                PTB -> PSOR (Display[11][i] << Segmento[i]);
             } break;
         case 'C':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][12] << Segmento[i]);
+                PTB -> PSOR (Display[12][i] << Segmento[i]);
             } break;
         case 'D':
             for(int i=0;i<7;i++) {
-                PTB -> PSOR (Display[i][13] << Segmento[i]);
+                PTB -> PSOR (Display[13][i] << Segmento[i]);
             } break;
     }
 }
