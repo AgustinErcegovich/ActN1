@@ -2,6 +2,8 @@
 #include "TECLADOMATRICIAL.h"
 #include "DECOBCD.h"
 
+int Segmento [7] = {0, 1, 2, 3, 4, 5, 6, 7};
+
 int main(){
     Puerto(A);
     SIM -> SCGC5 |= SIM_SCGC5_PORTB_MASK;
