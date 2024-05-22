@@ -18,6 +18,13 @@ int bcd10 [4] = {4, 5, 6, 7};
 
 int main() {
     SIM -> SCGC5 |= SIM_SCGC5_PORTA_MASK;
+    PORTA -> PCR[0] |= PORT_PCR_MUX(0)|PORT_PCR_PE_MASK|PORT_PCR_PS_MASK;
+    for (int a=0;a<7;a++) {
+        PORTA -> PCR[bcd1[a]] |= PORT_PCR_MUX(1);
+    }
+    for (int b=0;b<7;b++) {
+        PORTA -> PCR[bcd10[b]] |= PORT_PCR_MUX(1);
+    }
     while (1) {
         PTA -> PDIR & (1 << llave);
         if (llave == 0) {
